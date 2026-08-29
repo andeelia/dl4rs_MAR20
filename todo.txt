@@ -8,6 +8,6 @@
 --- change model to YOLOv8/YOLOv11 w/o segmentation
 
 - further steps after base setup
---- add more metrics (recall, precision and F1)
 --- change loss-function to signal-analytics (Phil)
---- redo the README.md
+--- rename classes to the actual aircraft
+----- show which aircraft has been predicted in the pred
