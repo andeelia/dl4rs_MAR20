@@ -1,0 +1,13 @@
+- dataset_provider.py
+--- should read .jpg files from data structure
+--- should read .xml files as annotation
+----- oriented bboxes
+--- convert them into YOLO .txt files
+
+- training.py
+--- change model to YOLOv8/YOLOv11 w/o segmentation
+
+- further steps after base setup
+--- add more metrics (recall, precision and F1)
+--- change loss-function to signal-analytics (Phil)
+--- redo the README.md
