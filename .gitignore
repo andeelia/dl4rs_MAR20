@@ -17,3 +17,8 @@ data/
 
 # Training/runs output
 runs/
+checkpoints/
+weights/
+
+
+/yolo11m-obb.pt
