@@ -47,8 +47,8 @@ from ultralytics.utils import LOGGER, YAML
 
 # --- Configuration -----------------------------------------------------------
 FINAL_EPOCHS    = 50    # final training epochs
-TUNING          = True  # master on/off for the whole tune workflow
-SMOKE_TEST      = False # True = run ONLY a 2-trial tune sanity check then exit
+TUNING          = False  # master on/off for the whole tune workflow
+SMOKE_TEST      = True # True = run ONLY a 2-trial tune sanity check then exit
 TUNE_EPOCHS     = 20    # epochs per tuning trial
 TUNE_ITERATIONS = 8     # number of tuning trials
 OPTIMIZER       = "AdamW"  # fixed optimizer during tuning (not mutated)
@@ -65,7 +65,8 @@ SEARCH_SPACE = {
     "cls": (0.1, 4.0),     # classification loss gain
 }
 
-DATA   = "data/MAR20/data.yaml"
+DATA       = "data/MAR20/data.yaml"
+SMOKE_DATA = "data/smoke_dataset/data.yaml"
 IMGSZ  = 640
 BATCH  = 16
 DEVICE = 0
@@ -83,7 +84,7 @@ def main():
         )
         model = YOLO("yolo11m-obb.pt")
         model.tune(
-            data=DATA,
+            data=SMOKE_DATA,
             epochs=TUNE_EPOCHS,
             iterations=2,
             imgsz=IMGSZ,
