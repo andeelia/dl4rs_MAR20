@@ -57,13 +57,11 @@ dl4rs-MAR20/
 ├── data/
 │   ├── MAR20/                 # the full dataset (git-ignored; see section 5)
 │   └── smoke_dataset/         # committed smoke-test dataset (10/10/10)
-├── training.py               # real YOLO11-OBB training (GPU) + SMOKE_TEST mode
+├── training.py               # real YOLO11-OBB training + SMOKE_TEST mode
 ├── weights/                  # pretrained OBB weights (yolo11m-obb.pt)
-├── checkpoints/              # epoch checkpoints from base-code runs
 ├── runs/                     # training/tuning outputs
 ├── Datenquelle               # record of all dataset source links
 ├── todo.txt                  # future-work notes
-├── base code/                # original UNet pipeline
 ├── pyproject.toml
 ├── uv.lock
 └── README.md
