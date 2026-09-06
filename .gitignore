@@ -13,7 +13,8 @@ wheels/
 .idea
 
 # Data folder
-data/
+data/*
+!data/smoke_dataset/
 
 # Training/runs output
 runs/
