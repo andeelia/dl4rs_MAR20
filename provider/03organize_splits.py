@@ -74,7 +74,6 @@ for split, ids in splits.items():
             print("WARNING: no label file for id", id_)
 
         # ---- move the IMAGE (.jpg) ----
-        # NOTE: images are .jpg, labels are .txt -- do not mix them up!
         src_img = os.path.join(DATA, "JPEGImages", id_ + ".jpg")
         dst_img = os.path.join(DATA, "images", split, id_ + ".jpg")
 

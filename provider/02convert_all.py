@@ -30,8 +30,7 @@ def convert_one_xml(id_, DATA, class_names):
     os.makedirs(out_folder, exist_ok=True)
     out_path = os.path.join(out_folder, id_ + ".txt")
 
-    # ---- READ THE IMAGE SIZE FROM THE JPEG (trusted source) ----
-    # Some XML files wrongly report width=0, height=0 (data bug).
+    # ---- READ THE IMAGE SIZE FROM THE JPEG ----
     # The real JPEG dimensions are always correct, so we use them.
     with Image.open(jpg_path) as im:
         width, height = im.size

@@ -18,9 +18,6 @@ WHAT THE FILE LOOKS LIKE
 
 WHAT EACH FIELD MEANS
 ---------------------
-  (no path line) - We OMIT "path:" on purpose. Ultralytics then uses the
-                   folder where data.yaml lives as the dataset root, so the
-                   dataset is RELOCATABLE between machines.
   train  - folder containing the training images (images/train)
   val    - folder containing the validation images (images/val)
   test   - folder containing the test images (images/test)
@@ -33,7 +30,7 @@ by 03organize_splits.py. So run order is:
     2. 02convert_all.py     (build the .txt labels)
     3. 03organize_splits.py (move images+labels into train/val/test)
     4. 04collect_classes.py (build classes.txt)
-    5. 05make_yaml.py       (build data.yaml from classes.txt)  <- THIS script
+    5. 05make_yaml.py       (build data.yaml from classes.txt)
 """
 
 import os
@@ -57,8 +54,7 @@ lines = []
 # Ultralytics computes the dataset root from the FOLDER WHERE THIS
 # data.yaml LIVES (it reads the fallback `Path(yaml_file).parent`).
 # Since data.yaml is at data/MAR20/data.yaml, "images/train" below resolve
-# to data/MAR20/images/train. Omitted path -> the whole dataset is
-# RELOCATABLE: copy the repo to the GPU machine and it just works.
+# to data/MAR20/images/train.
 # (Writing "path: ." would instead resolve relative to the CURRENT WORKING
 # DIRECTORY, which breaks when you run the script from a different folder.)
 
