@@ -18,7 +18,6 @@ data/*
 
 # Training/runs output
 runs/
-checkpoints/
 weights/
 
 
